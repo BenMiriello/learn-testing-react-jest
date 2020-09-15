@@ -1,5 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
 class App extends Component {
@@ -28,7 +27,7 @@ class App extends Component {
   render() {
     const { isLoading, users, error } = this.state;
     return (
-      <React.Fragment>
+      <>
         <h1>Display Active Users Account Details</h1>
         {error ? <p>{error.message}</p> : null}
         {!isLoading ? (
@@ -38,7 +37,7 @@ class App extends Component {
         ) : (
           <h3>Fetching Users...</h3>
         )}
-      </React.Fragment>
+      </>
     );
   }
 }
