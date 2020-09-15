@@ -4,6 +4,7 @@ import App from './App';
 import Account from './Account';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from "enzyme-adapter-react-16";
+import toJson from "enzyme-to-json";
 configure({ adapter: new Adapter() });
 
 
@@ -36,8 +37,12 @@ describe("", () => {
   })
 
   it("renders correctly with no error message", () => {
-    const wrapper = mount(<App/>);
+    const wrapper = mount(<App />);
     expect(wrapper.state("error")).toEqual(null);
   })
 });
 
+it("renders correctly", () => {
+  const tree = shallow(<App />);
+  expect(toJson(tree)).toMatchSnapshot();
+});
