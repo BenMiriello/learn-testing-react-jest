@@ -35,7 +35,7 @@ class App extends Component {
             return <Account key={user.username} user={user} />;
           })
         ) : (
-          <h3>Fetching Users...</h3>
+          <h3>Loadering...</h3>
         )}
       </>
     );

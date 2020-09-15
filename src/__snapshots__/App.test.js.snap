@@ -6,7 +6,7 @@ exports[`renders correctly 1`] = `
     Display Active Users Account Details
   </h1>
   <h3>
-    Fetching Users...
+    Loadering...
   </h3>
 </Fragment>
 `;
