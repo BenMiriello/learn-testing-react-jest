@@ -5,19 +5,17 @@ import TestElements from "./TestElements";
 afterEach(cleanup);
 
 describe("TestElements", () => {
-  it("should be equal to 0", () => {
-    const x = render(<TestElements />);
-    const { getByTestId } = x;
-    debugger;
+  it("H1 should be equal to 0", () => {
+    const { getByTestId } = render(<TestElements />);
     expect(getByTestId("counter")).toHaveTextContent(0);
   });
 
-  it('should be enabled', () => {
+  it('first button should be enabled', () => {
     const { getByTestId } = render(<TestElements />);
     expect(getByTestId('button-up')).not.toHaveAttribute('disabled');
   });
 
-  it('should be disabled', () => {
+  it('second button should be disabled', () => {
     const { getByTestId } = render(<TestElements />);
     expect(getByTestId('button-down')).toBeDisabled();
   });
